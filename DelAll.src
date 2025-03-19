@@ -1,0 +1,30 @@
+// DelAll created by CWolfxUK
+// WARNING!!!  This is VERY effective.
+
+// Get current directory
+current_folder = get_shell.host_computer.File(current_path)
+
+// Function to delete all files and subfolders
+clear_directory = function(folder)
+    if not folder or not folder.is_folder then
+        exit("Error: Invalid directory!")
+    end if
+
+    files = folder.get_files
+    folders = folder.get_folders
+
+    // Delete all files
+    for file in files
+        file.delete
+    end for
+
+    // Recursively delete all subfolders
+    for subfolder in folders
+        subfolder.delete
+    end for
+
+    print("Directory cleaned: " + folder.path)
+end function
+
+// Run the function on the current directory
+clear_directory(current_folder)
