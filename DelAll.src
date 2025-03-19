@@ -1,5 +1,6 @@
 // DelAll created by CWolfxUK
 // WARNING!!!  This is VERY effective.
+// Anything, even hidden directories such as .Trash will be deleted.
 
 // Get current directory
 current_folder = get_shell.host_computer.File(current_path)
